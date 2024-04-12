@@ -41,7 +41,12 @@ Widget build(context){
       title: Text('Animation'),
       ),
     body:GestureDetector(
-      child: buildAnimation(),
+      child: Stack(
+        children: [
+          buildAnimation(),
+          buildBox()
+        ],
+      ),
       onTap: onTap,
 
     ),
@@ -61,6 +66,12 @@ Widget buildAnimation(){
     );
     
 }
-
+Widget buildBox() {
+  return Container(
+    height: 200.0,
+    width: 200.0,
+    color: Colors.brown,
+  );
+}
 
 }
