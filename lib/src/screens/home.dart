@@ -21,7 +21,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin{
     catController = AnimationController(
       duration: Duration(seconds:2),
       vsync: this);
-    catAnimation = Tween(begin: 0.0 , end: 100.0).animate(
+    catAnimation = Tween(begin: -50.0 , end: 100.0).animate(
       CurvedAnimation(parent: catController, curve: Curves.easeIn),
       
       );
@@ -41,12 +41,16 @@ Widget build(context){
       title: Text('Animation'),
       ),
     body:GestureDetector(
-      child: Stack(
+
+      child: Center(
+        child:Stack(
         children: [
           buildAnimation(),
           buildBox()
         ],
       ),
+      ),
+       
       onTap: onTap,
 
     ),
