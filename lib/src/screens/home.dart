@@ -19,9 +19,9 @@ class HomeState extends State<Home> with TickerProviderStateMixin{
     super.initState();
 
     catController = AnimationController(
-      duration: Duration(seconds:2),
+      duration: Duration(milliseconds:1),
       vsync: this);
-    catAnimation = Tween(begin: -50.0 , end: 100.0).animate(
+    catAnimation = Tween(begin: -35 , end: -80).animate(
       CurvedAnimation(parent: catController, curve: Curves.easeIn),
       
       );
