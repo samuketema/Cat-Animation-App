@@ -43,7 +43,8 @@ Widget build(context){
     body:GestureDetector(
 
       child: Center(
-        child:Stack(
+        child: Stack(
+        clipBehavior: Clip.none,
         children: [
           buildAnimation(),
           buildBox()
@@ -64,6 +65,8 @@ Widget buildAnimation(){
       return Positioned(
         
         bottom: catAnimation.value,
+        right: 0.0,
+        left: 0.0,
         child: child!,
       );
     },
