@@ -28,6 +28,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin{
     boxAnimation = Tween(begin:0.5 , end: -11.0).animate(
       CurvedAnimation(parent: boxController, curve: Curves.linear)
     );
+      boxController.forward();
 
     catController = AnimationController(
       duration: Duration(milliseconds:10),
