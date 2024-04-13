@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../widgets/cat.dart';
-
+import 'dart:math';
 class Home extends StatefulWidget{
 
   @override
@@ -21,7 +21,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin{
     catController = AnimationController(
       duration: Duration(milliseconds:1),
       vsync: this);
-    catAnimation = Tween(begin: -35 , end: -80).animate(
+    catAnimation = Tween(begin: -35.0 , end: -80.0).animate(
       CurvedAnimation(parent: catController, curve: Curves.easeIn),
       
       );
@@ -47,7 +47,8 @@ Widget build(context){
         clipBehavior: Clip.none,
         children: [
           buildAnimation(),
-          buildBox()
+          buildBox(),
+          
         ],
       ),
       ),
@@ -82,4 +83,15 @@ Widget buildBox() {
   );
 }
 
+Widget leftArm(){
+  return Transform.rotate(
+    angle:3*pi/2.0,
+
+    child: Container(
+      height: 10,
+      width: 125,
+      color: Colors.red,
+    ),
+    );
+}
 }
