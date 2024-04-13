@@ -19,9 +19,9 @@ class HomeState extends State<Home> with TickerProviderStateMixin{
     super.initState();
 
     catController = AnimationController(
-      duration: Duration(milliseconds:1),
+      duration: Duration(milliseconds:10),
       vsync: this);
-    catAnimation = Tween(begin: -35.0 , end: -80.0).animate(
+    catAnimation = Tween(begin: 136.0 , end: 193.5).animate(
       CurvedAnimation(parent: catController, curve: Curves.easeIn),
       
       );
@@ -48,6 +48,7 @@ Widget build(context){
         children: [
           buildAnimation(),
           buildBox(),
+          leftArm()
           
         ],
       ),
@@ -84,14 +85,18 @@ Widget buildBox() {
 }
 
 Widget leftArm(){
-  return Transform.rotate(
-    angle:3*pi/2.0,
-
+  return Positioned(
+    top: 3,
+    left: 5,
+    child: Transform.rotate(
+    angle:-1.39*pi,
+    alignment: Alignment.topLeft,
     child: Container(
       height: 10,
       width: 125,
       color: Colors.red,
     ),
-    );
+    )
+  );
 }
 }
